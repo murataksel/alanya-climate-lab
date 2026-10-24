@@ -1,0 +1,56 @@
+{
+  "release": "1.0.0",
+  "date": "2026-10-24",
+  "purpose": "Software and data-transformation verification, not scientific validation of intervention effects.",
+  "checks": [
+    "WGS84 / UTM36 forward and inverse agree with independent pyproj values within 2 mm",
+    "No-intervention event runoff equals hand calculation 0.05 m × 10000 m² × 0.9 = 450 m³",
+    "Full-area grass conversion equals 125 m³ runoff and 325 m³ reduction",
+    "Overlapping surface edits do not duplicate effective area, demand or cost",
+    "A tree generates geometry and water demand without inventing a ground runoff benefit",
+    "Storage obeys mass balance and connected-flow limit",
+    "Zero rain gives zero event runoff and retained water",
+    "Building floor area is based on eligible raster footprint and declared floors",
+    "Removed imported building reduces known floor area and resets ground to bare-soil assumption",
+    "Unknown flood support remains explicitly unknown",
+    "Open water and nodata are excluded from edited land accounting",
+    "Solar geometry has plausible local-noon elevation, correct afternoon azimuth and no night shadows",
+    "CSV export retains negative numeric quantities and protects formula-like scenario names",
+    "Full native WorldCover run-length decoding preserves the declared dimensions",
+    "Browser-created centre pilot exactly matches independent rasterio land and hazard sampling",
+    "Browser-created oba pilot exactly matches independent rasterio land and hazard sampling",
+    "Browser-created mahmutlar pilot exactly matches independent rasterio land and hazard sampling"
+  ],
+  "passed": 17,
+  "failed": 0,
+  "browser_qa": {
+    "environment": "Chrome desktop and 390 px iframe viewport (375 px content width); no physical-device test",
+    "passed": [
+      "Example design updates shade, event water balance, water demand and assumed cost.",
+      "A 20 m × 20 m four-floor building drawn through accessible map controls adds 1600 m² gross floor area.",
+      "English/Turkish switch preserves scene and displayed values.",
+      "Scenario saved and compared with the source state; saved names retained.",
+      "JSON and CSV downloaded; JSON re-import restores 13 objects and the same numerical outputs.",
+      "Two-building WGS84 GeoJSON inventory imported; source-building removal changes known floor area by -1200 m² and undo restores it.",
+      "Mahmutlar fixed river T100 overlay loads; empty and unknown hazard support remains explicitly qualified.",
+      "A custom 1 km² study area created from the full native WorldCover classes and source flood geometries.",
+      "390 px responsive workspace and map-jump control reviewed; document width equals viewport width.",
+      "Methods, coefficients and game cost assumptions available in both languages.",
+      "v11 atlas portal preserves English/Turkish preference and links back to the current atlas installation.",
+      "390 px Floods header retains all four hazard links and adds the Lab portal without document overflow."
+    ],
+    "limits": [
+      "Future thermal, hydraulic, wildfire-spread and crop-yield model integrations are not implemented.",
+      "Original source models are not scientifically validated by these software checks.",
+      "Download-event capture within the responsive QA iframe timed out; top-level CSV/JSON downloads and JSON re-import were verified."
+    ]
+  },
+  "integration_checks": {
+    "four_original_hazard_links_preserved": true,
+    "new_lab_link_on_all_four_atlas_entry_pages": true,
+    "cache_versions_updated_for_changed_shared_assets": true,
+    "static_relative_links_resolve": true,
+    "numerical_atlas_outputs_changed": false
+  },
+  "source_precision": "Flood depths retain source precision through sampling; categorical >=0.1 m threshold agreement checked against independent rasterio sampling."
+}
