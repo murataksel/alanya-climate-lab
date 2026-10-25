@@ -52,5 +52,25 @@
     "static_relative_links_resolve": true,
     "numerical_atlas_outputs_changed": false
   },
-  "source_precision": "Flood depths retain source precision through sampling; categorical >=0.1 m threshold agreement checked against independent rasterio sampling."
+  "source_precision": "Flood depths retain source precision through sampling; categorical >=0.1 m threshold agreement checked against independent rasterio sampling.",
+  "basemap_update": {
+    "release": "1.1.0",
+    "date": "2026-10-25",
+    "provider": "OpenStreetMap France (osmfr), OpenStreetMap data",
+    "scope": "Visual basemap and display preferences only; calculation engine and all GIS inputs unchanged.",
+    "browser_checks": [
+      "Street and building tiles visually reviewed; no access-block image accepted as a successful map.",
+      "Example scenario retains +825 m² shade, 324.2 m³ runoff reduction, 5.86 m³/day assumed water demand and €213650 assumed cost.",
+      "Land-cover visibility at 0% and 100% leaves all result-card contents unchanged.",
+      "Offline selection removes all online tile images and restores the full local data background without changing results.",
+      "English controls, labels and displayed assumptions reviewed.",
+      "Basemap, opacity (25%) and 12-object design survive a page reload.",
+      "390 px iframe (375 px content) has equal document and viewport widths; controls and attribution visually reviewed."
+    ],
+    "limits": [
+      "No physical mobile-device test.",
+      "Tile-service uptime is external to this application.",
+      "The original engine and scientific-model verification record is retained; these UI checks are not new scientific model validation."
+    ]
+  }
 }

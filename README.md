@@ -1,10 +1,18 @@
-# Alanya Climate Lab · 1.0
+# Alanya Climate Lab · 1.1
 
 A bilingual, browser-local planning game using the supplied Alanya Climate Risk Atlas v11 geography. Build and compare explicit hypothetical interventions on a real 1 km² study area. Three presets and a custom area picker are included.
 
 ## Run
 
-Open `index.html` directly (source repository: `dist/index.html`), or serve `dist` with any static HTTP server. No installation, API key or model service is required. Source data, Leaflet and the calculation engine are bundled. Hosted access is private by default. The application stores scenarios in the current browser; JSON export is required to transfer work to another device or origin.
+Open `index.html` directly (source repository: `dist/index.html`), or serve `dist` with any static HTTP server. No installation, API key or model service is required. Source data, Leaflet and the calculation engine are bundled. The separate GitHub Pages site is public. The application stores scenarios in the current browser; JSON export is required to transfer work to another device or origin.
+
+## Street basemap
+
+The web version starts with an OpenStreetMap street map served by OpenStreetMap France. The **Basemap** selector switches between streets and the bundled offline data background. **Land-cover visibility** adjusts the WorldCover overlay from 0–100%; proposed objects, geometric shadows and selected hazards remain separate layers. Basemap and visibility preferences survive reloads in this browser. Opening `index.html` as a local file uses the offline background. Online tiles require an internet connection; if they fail to load, the data background remains available.
+
+Basemap buildings and roads are visual context only. They are not automatically imported as calculation inventory and do not change any model input or result.
+
+Street tiles: data © OpenStreetMap contributors (ODbL); cartography © OpenStreetMap France (CC BY-SA 2.0). Attribution is visible on the map. No street tiles are bundled, bulk-downloaded or prefetched. This public, non-commercial academic site uses the service for interactive viewing under its moderate-traffic policy: https://www.openstreetmap.fr/usage/.
 
 ## Interact
 
@@ -33,6 +41,8 @@ Run `node tests/engine.cjs` for meaningful engine and data-transformation checks
 
 ## References and attribution
 
+- OpenStreetMap copyright: https://www.openstreetmap.org/copyright
+- OpenStreetMap France cartography and licence: https://www.openstreetmap.fr/open-data/
 - NOAA, General Solar Position Calculations: https://gml.noaa.gov/grad/solcalc/solareqns.PDF
 - ESA WorldCover data, licence and citation: https://esa-worldcover.org/en/data-access
 - UMEP/SOLWEIG reference implementation (future model integration; not run here): https://umep-docs.readthedocs.io/en/latest/OtherManuals/SOLWEIG.html
@@ -40,4 +50,4 @@ Run `node tests/engine.cjs` for meaningful engine and data-transformation checks
 
 © ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium. WorldCover: CC BY 4.0. Other geography retains the supplied atlas v11 source scope and limitations. Leaflet 1.9.4 licence is bundled in `dist/assets/LEAFLET-LICENSE.txt`.
 
-Original analytical atlas outputs are not overwritten or recalculated. See `github-integration` for the separate v11 integration patch. The user’s GitHub deployment is updated manually.
+Original analytical atlas outputs are not overwritten or recalculated. See `github-integration` for the separate v11 integration patch. Updates to this separate GitHub Pages repository are published from its main branch.

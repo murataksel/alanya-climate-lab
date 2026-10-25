@@ -1,10 +1,18 @@
-# Alanya İklim Laboratuvarı · v1.0
+# Alanya İklim Laboratuvarı · v1.1
 
 Gerçek Alanya coğrafyasında müdahale tasarlama ve alternatif karşılaştırma oyunu. Türkçe / English. Merkez, Oba çevresi ve Mahmutlar hazır alanları vardır; Alanya haritasından başka bir 1 km² alan da seçilebilir.
 
 ## Başlatma
 
 Bağımsız paketi açıp `index.html` dosyasını çift tıklayın. Kaynak depo içindeyseniz dosya `dist/index.html` konumundadır. Kurulum, API anahtarı veya model sunucusu gerekmez. Veriler ve kütüphane pakettedir. Senaryolar tarayıcıda saklanır; başka cihazda açmak veya yedeklemek için JSON indirin.
+
+## Sokak haritası altlığı
+
+Web sürümü, OpenStreetMap France tarafından sunulan OpenStreetMap sokak haritasıyla açılır. Haritanın üstündeki **Harita altlığı** seçicisinden çevrimdışı veri altlığına geçilebilir. **Arazi örtüsü görünürlüğü** kaydırıcısı WorldCover katmanını %0–100 arasında ayarlar; çizilen müdahaleler, geometrik gölgeler ve seçili tehlike ayrı katmanlarda kalır. Altlık ve görünürlük tercihleri bu tarayıcıda saklanır.
+
+OpenStreetMap internet bağlantısı gerektirir. `index.html` dosyasını yerel dosya olarak açtığınızda çevrimdışı altlık kullanılır. Sokak görüntüleri yüklenemezse veri altlığı kullanılabilir. Altlıkta görünen binalar ve yollar yalnızca görsel bağlamdır; hesap envanterine otomatik aktarılmaz ve sayısal sonuçları değiştirmez.
+
+Harita verisi © OpenStreetMap katkıcıları (ODbL); kartografya © OpenStreetMap France (CC BY-SA 2.0). Atıflar haritada görünürdür. Sokak görüntüleri pakete alınmaz veya toplu indirilmez. Bu herkese açık akademik site, hizmeti ticari olmayan, makul trafikli etkileşimli kullanım koşullarıyla kullanır: https://www.openstreetmap.fr/usage/.
 
 ## İlk deneme
 
